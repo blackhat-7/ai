@@ -1,0 +1,30 @@
+[project]
+name = "rags"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "asyncpraw>=7.8.1",
+    "asyncpraw-stubs>=0.0.3",
+    "bs4>=0.0.2",
+    "crawl4ai",
+    "fastapi>=0.115.7",
+    "httpx>=0.28.1",
+    "lxml>=5.3.0",
+    "mypy>=1.14.1",
+    "pandas>=2.2.3",
+    "pip>=25.0",
+    "playwright>=1.49.1",
+    "pydantic>=2.10.6",
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.3",
+    "python-dotenv>=1.0.1",
+    "types-beautifulsoup4>=4.12.0.20241020",
+    "uvicorn>=0.34.0",
+]
+
+[dependency-groups]
+dev = [
+    "pandas-stubs>=2.2.3.241126",
+]

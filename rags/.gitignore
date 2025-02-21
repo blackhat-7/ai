@@ -1,14 +1,5 @@
-tmp/
-target/
-main
-
-tmp/
-target/
-main
 .env
 .cache
-
-# python stuff
 .pytest_cache/
 .mypy_cache
 .venv/
