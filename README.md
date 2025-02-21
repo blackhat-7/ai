@@ -42,7 +42,7 @@ The project combines Go-based service management with Python-based RAG implement
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone [[repository-url]](https://github.com/blackhat-7/ai)
 cd ai
 ```
 
