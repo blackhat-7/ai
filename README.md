@@ -10,6 +10,20 @@ A personal collection of AI-related tools and utilities, focusing on setup, mana
   - Automatically detects Python installation and site packages
   - Safely backs up the WebUI database
 
+### RAG System
+- Python-based Retrieval-Augmented Generation implementation
+- Includes development tools and testing framework
+- Supports both MacOS and Linux environments
+
+#### Available RAG APIs
+- **Web Search RAG**: 
+  - Integrates with SearxNG for web search capabilities
+  - Supports customizable search parameters (time range, website filtering)
+  - Reddit integration for social media content retrieval
+- **Football Data RAG**:
+  - Fetches and processes football match data
+  - Supports multiple tournaments and date-based queries
+
 ### Coming Soon
 - SearXNG setup and configuration (In development)
 
@@ -60,6 +74,15 @@ make test
 ```
 .
 ├── cmd/          # Command-line interface implementations
+├── rags/         # RAG system implementation
+│   ├── src/          # RAG source code
+│   │   ├── api/         # FastAPI endpoints
+│   │   ├── rags/        # RAG implementations
+│   │   │   ├── web_search/  # Web search RAG
+│   │   │   └── football/    # Football data RAG
+│   │   └── owui/        # OpenWebUI integration
+│   ├── pyproject.toml   # Python dependencies
+│   └── Makefile        # RAG-specific build commands
 ├── src/          # Source code for different services
 │   ├── openwebui/    # OpenWebUI related functionality
 │   ├── searxng/     # SearXNG related functionality (WIP)
