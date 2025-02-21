@@ -1,6 +1,12 @@
 # AI Tools Collection
 
-A personal collection of AI-related tools and utilities, focusing on setup, management, and backup of various AI services and applications.
+A personal collection of AI-related tools and utilities, featuring:
+- Setup and management of AI services like OpenWebUI
+- Retrieval-Augmented Generation (RAG) systems for web search and sports data
+- Automated backup and configuration management
+- Integration with SearxNG and Reddit for enhanced data retrieval
+
+The project combines Go-based service management with Python-based RAG implementations, providing a comprehensive toolkit for AI applications.
 
 ## Features
 
