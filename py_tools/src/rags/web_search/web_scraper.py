@@ -25,8 +25,6 @@ class WebScraper(BaseModel):
         """Scrapes a list of search results asynchronously."""
         if http_async_client is None:
             http_async_client = httpx.AsyncClient()
-        # if ignored_websites:
-        #     search_results = [r for r in search_results if r.url]
         tasks = [self._fetch_and_parse_page(http_async_client, result) for result in search_results]
         res = await asyncio.gather(*tasks)
         await http_async_client.aclose()

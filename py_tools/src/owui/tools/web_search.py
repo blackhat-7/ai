@@ -7,6 +7,7 @@ license: MIT
 """
 
 import asyncio
+from pydantic.type_adapter import P
 import requests
 import json
 from urllib.parse import urlparse
@@ -80,8 +81,8 @@ class Tools:
     async def search_web(
         self,
         queries: List[str],
-        time_range: str,
-        website: str,
+        time_range: str = "",
+        website: str = "",
         __event_emitter__: Callable[[dict], Any] = None,
     ) -> str:
         """
@@ -153,7 +154,7 @@ class Tools:
 
         await emitter.emit(
             status="complete",
-            description=f"Web search completed | {sum(len(r.results) for r in processed_results)} results | {len(processed_results)} results | {len(queries)} queries",
+            description=f"Web search completed | {sum(len(r.results) for r in processed_results)} results | {len(queries)} queries",
             done=True,
         )
 
@@ -176,9 +177,13 @@ class Tools:
                 if tr in time_range.lower():
                     params['time_range'] = tr
                     break
+        else:
+            params['time_range'] = None
 
         if website:
             params['website'] = website
+        else:
+            params['website'] = None
 
         resp = requests.get(
             self.valves.WEB_SEARCH_API_URL, params=params, headers=self.headers, timeout=120
