@@ -1,4 +1,4 @@
-pub mod scraper;
+pub mod web_tools;
 
 use anyhow::Result;
 use clap::{Parser, Subcommand};
@@ -23,7 +23,7 @@ impl Args {
             Commands::Scrape { url } => {
                 let runtime = tokio::runtime::Runtime::new()?;
                 runtime.block_on(async {
-                    let llm_scraper = scraper::Scraper::new(crawl4ai_endpoint.to_string());
+                    let llm_scraper = web_tools::WebTools::new(crawl4ai_endpoint.to_string());
                     llm_scraper.scrape(&url).await?;
                     Ok(())
                 })
